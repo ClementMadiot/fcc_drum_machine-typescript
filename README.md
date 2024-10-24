@@ -1,51 +1,105 @@
-# React + TypeScript + Vite
+<div align="center" class="container">
+<picture>
+  <img alt="FreeCodeCamp" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
+</picture>
+<h3  align="center">Drum Machine</h3>
+    <img src="https://img.shields.io/badge/-Vite-black?style=for-the-badge&logoColor=white&logo=vite&color=646CFF"  alt="vite" />
+    <img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
+  </div>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## <br /> 📋 <a name="table">Summary</a>
 
-Currently, two official plugins are available:
+- ✨ [Introduction](#introduction)
+- 🛠 [Technology Used](#tech-stack)
+- 🚀 [Launch App](#launch-app)
+- 🎨 [Styling](#style)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## <br /> <a name="introduction">✨ Introduction</a>
 
-## Expanding the ESLint configuration
+Third project FreeCodeCamp to valid the certification "Front End Development Libraries"
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**User Story :**
 
-- Configure the top-level `parserOptions` property like this:
+- User Story #1: I should be able to see an outer container with a corresponding id="drum-machine" that contains all other elements.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- User Story #2: Within #drum-machine I can see an element with a corresponding id="display".
+
+- User Story #3: Within #drum-machine I can see 9 clickable drum pad elements, each with a class name of drum-pad, a unique id that describes the audio clip the drum pad will be set up to trigger, and an inner text that corresponds to one of the following keys on the keyboard: Q, W, E, A, S, D, Z, X, C. The drum pads MUST be in this order.
+
+- User Story #4: Within each .drum-pad, there should be an HTML5 audio element which has a src attribute pointing to an audio clip, a class name of clip, and an id corresponding to the inner text of its parent .drum-pad (e.g. id="Q", id="W", id="E" etc.).
+
+- User Story #5: When I click on a .drum-pad element, the audio clip contained in its child audio element should be triggered.
+
+- User Story #6: When I press the trigger key associated with each .drum-pad, the audio clip contained in its child audio element should be triggered (e.g. pressing the Q key should trigger the drum pad which contains the string Q, pressing the W key should trigger the drum pad which contains the string W, etc.).
+
+- User Story #7: When a .drum-pad is triggered, a string describing the associated audio clip is displayed as the inner text of the #display element (each string must be unique).
+
+**Audio samples use for my drum machine:**
+
+- [Heater 1](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-1.mp3)
+- [Heater 2](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-2.mp3)
+- [Heater 3](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-3.mp3)
+- [Heater 4](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-4_1.mp3)
+- [Clap](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-6.mp3)
+- [Open-HH](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Dsc_Oh.mp3)
+- [Kick-n'-Hat](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Kick_n_Hat.mp3)
+- [Kick](https://cdn.freecodecamp.org/testable-projects-fcc/audio/RP4_KICK_1.mp3)
+- [Closed-HH](https://cdn.freecodecamp.org/testable-projects-fcc/audio/Cev_H2.mp3)
+
+## <br /> <a name="tech-stack">🛠 Technology Used</a>
+
+- [SASS](https://sass-lang.com/install/)
+  Providing advanced features like variables, nesting, and mixins for more efficient and maintainable styling. Sass allows developers to write more complex and reusable CSS, reducing the amount of duplicate code and simplifying the design process.
+
+## <br /> <a name="launch-app">🚀 Launch App</a>
+
+Follow these steps to set up the project locally on your machine.
+
+**Prerequisites**
+
+> [!NOTE]
+> Make sure you have the following installed on your machine:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/) _(Node Package Manager)_
+
+**Cloning the Repository**
+
+```bash
+git clone {git remote URL}
+cd {git project..}
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+**Installation**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+> After cloning the repository, run the command `npm i` or `yarn i` to install the project's dependencies.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+_npm_
+
 ```
-# fcc_drum_machine-typescript
+npm install
+```
+
+_yarn_
+
+```
+yarn install
+```
+
+> Once the dependencies are installed, start the project with the command `npm run dev`.
+
+## <br /> <a name="style">🎨 Styling</a>
+
+Global styling are defined using **SCSS**
+
+<details>
+<summary><code>App.scss</code></summary>
+
+```css
+
+```
+
+</details>
