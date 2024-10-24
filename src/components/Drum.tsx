@@ -9,6 +9,7 @@ const Drum = ({ audio }: AudioProps) => {
     (document.getElementById(clip.key) as HTMLAudioElement)
       ?.play()
       .catch(console.error)
+      document.getElementById("display")!.innerText = clip.id
   };
 
   return (
